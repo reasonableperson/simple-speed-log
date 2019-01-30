@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mlr --icsv --opprint --barred put '
+    func mbps(s) {return fmtnum(s / 2**20, "%.2f") . " Mbps"}
+    $Download = mbps($Download);
+    $Upload = mbps($Upload);
+    $Timestamp = gmt2sec($Timestamp) + 11*60*60;
+    $Date = strftime($Timestamp, "%d %b %Y");
+    $Time = strftime($Timestamp, "%H:%M %P")' then \
+    cut -o -f Date,Time,Download,Upload, speed.log

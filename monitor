@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while [ 1 ]; do
+    echo "["$(date | tr -d '\n')"] Running speed test."
+    #speedtest --csv >> speed.log
+    sleeptime=$(($RANDOM%(3600)+1))
+    echo "Waiting $sleeptime seconds."
+    sleep $sleeptime
+done
