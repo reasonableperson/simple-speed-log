@@ -7,4 +7,5 @@ mlr --icsv --opprint --barred put '
     $Timestamp = gmt2sec($Timestamp) + 11*60*60;
     $Date = strftime($Timestamp, "%d %b %Y");
     $Time = strftime($Timestamp, "%H:%M %P")' then \
-    cut -o -f Date,Time,Download,Upload, speed.log
+    cut -o -f Date,Time,Download,Upload then \
+    tail -n 5 speed.log
