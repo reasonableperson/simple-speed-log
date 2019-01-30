@@ -19,8 +19,10 @@ parts of `speed.log` in a nice format.
 
 Create and enter a virtualenv:
 
-`python3 -m venv venv`
-`source venv/bin/activate`
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 
 Install `speedtest-cli`:
 
