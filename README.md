@@ -11,6 +11,27 @@ reliable. Each test is logged to `speed.log` in CSV format.
 `./view` is a shell script that calls `mlr` and dumps the most interesting
 parts of `speed.log` in a nice format.
 
+
+[1]: https://github.com/johnkerl/miller
+[2]: https://github.com/sivel/speedtest-cli
+
+## Setup
+
+Create and enter a virtualenv:
+
+`python3 -m venv venv`
+`source venv/bin/activate`
+
+Install `speedtest-cli`:
+
+`pip install -r requirements.txt`
+
+To wipe out the sample data I am storing in the repo:
+
+`speedtest --csv-header > speed.log`
+
+Otherwise, just invoke `./view` or `./monitor`:
+
 ```
 λ ./view
 +-------------+----------+------------+-----------+
@@ -21,6 +42,3 @@ parts of `speed.log` in a nice format.
 | 30 Jan 2019 | 21:34 pm | 85.06 Mbps | 0.26 Mbps |
 +-------------+----------+------------+-----------+
 ```
-
-[1]: https://github.com/johnkerl/miller
-[2]: https://github.com/sivel/speedtest-cli
